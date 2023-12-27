@@ -12,7 +12,7 @@ env:
 
 jobs:
   release:
-    name: Release - ${{ matrix.platform.os }}
+    name: Release - ${{ matrix.platform.os }} for ${{ matrix.platform.release_for }}
     runs-on: ${{ matrix.platform.os }}
     strategy:
       matrix:
@@ -51,7 +51,8 @@ jobs:
             target: x86_64-unknown-linux-gnu
             bin: wizzy
             name: wizzy-Ubuntu-x86_64.tar.gz
-            command: build
+            command: both
+            skip_tests: true
 
           - release_for: Ubuntu-ARM64
             os: ubuntu-latest
