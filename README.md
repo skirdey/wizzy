@@ -1,6 +1,6 @@
 # Wizzy - File and Directory Analyzer
 
-![OIG](https://github.com/skirdey/wizzy/assets/5145792/f5d8890e-e35a-42c2-a679-75f52869403e)
+![OIG](https://github.com/skirdey/wizzy/assets/5145792/df64ad68-93d8-4194-8486-b3ecd4afed9b)
 
 
 ## Introduction
