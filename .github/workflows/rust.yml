@@ -70,8 +70,8 @@ jobs:
       - name: Publish release artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: precious-${{ matrix.platform.os_name }}
-          path: "precious-*"
+          name: wizzy-${{ matrix.platform.os_name }}
+          path: "wizzy-*"
         if: matrix.toolchain == 'stable' && github.ref == 'refs/tags/test-release'
       - name: Generate SHA-256
         run: shasum -a 256 ${{ matrix.platform.name }}
