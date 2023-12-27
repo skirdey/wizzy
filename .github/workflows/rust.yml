@@ -12,7 +12,8 @@ env:
 
 jobs:
   release:
-    name: Release - ${{ matrix.platform.release_for }}
+    name: Release - ${{ matrix.platform.os }}
+    runs-on: ${{ matrix.platform.os }}
     strategy:
       matrix:
         platform:
@@ -60,8 +61,6 @@ jobs:
             command: build
             skip_tests: true
 
-    runs-on: ${{ matrix.platform.os }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -71,7 +70,6 @@ jobs:
         with:
           command: "build"
           target: ${{ matrix.platform.target }}
-          toolchain: ${{ matrix.toolchain }}
           args: "--locked --release"
           strip: true
 
@@ -80,7 +78,6 @@ jobs:
         with:
           command: "test"
           target: ${{ matrix.platform.target }}
-          toolchain: ${{ matrix.toolchain }}
           args: "--locked --release"
         if: ${{ !matrix.platform.skip_tests }}
 
