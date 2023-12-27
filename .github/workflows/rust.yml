@@ -43,6 +43,7 @@ jobs:
             bin: wizzy
             name: wizzy-Darwin-ARM64.tar.gz
             command: both
+            skip_tests: true
 
           - release_for: Ubuntu-x86_64
             os: ubuntu-latest
@@ -57,6 +58,7 @@ jobs:
             bin: wizzy
             name: wizzy-Ubuntu-ARM64.tar.gz
             command: build
+            skip_tests: true
 
     runs-on: ${{ matrix.platform.os }}
 
