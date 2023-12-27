@@ -76,7 +76,5 @@ jobs:
         with:
           draft: false
           files: "wizzy-*"
-          body_path: Changes.md
         if: startsWith( github.ref, 'refs/tags/' )
 
-# You can add additional jobs or steps as needed
