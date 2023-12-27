@@ -69,10 +69,20 @@ jobs:
       - name: Build binary
         uses: houseabsolute/actions-rust-cross@v0
         with:
-          command: ${{ matrix.platform.command }}
+          command: "build"
           target: ${{ matrix.platform.target }}
+          toolchain: ${{ matrix.toolchain }}
           args: "--locked --release"
           strip: true
+
+      - name: Run tests
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: "test"
+          target: ${{ matrix.platform.target }}
+          toolchain: ${{ matrix.toolchain }}
+          args: "--locked --release"
+        if: ${{ !matrix.platform.skip_tests }}
 
       - name: Package as archive
         shell: bash
