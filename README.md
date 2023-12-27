@@ -1,5 +1,8 @@
 # Wizzy - File and Directory Analyzer
 
+![OIG](https://github.com/skirdey/wizzy/assets/5145792/f5d8890e-e35a-42c2-a679-75f52869403e)
+
+
 ## Introduction
 
 **Wizzy** is a command-line tool designed for efficient file count with cross-platform support.  
